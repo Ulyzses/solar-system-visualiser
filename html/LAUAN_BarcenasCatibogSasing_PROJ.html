@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Solar System</title>
+<link href="../css/home.css" rel="stylesheet" type="text/css">
+<link href="../media/Sun.png" rel="icon">
+</head>
+
+<body>
+<!--bg-->
+<div>
+	<div id="stars"></div>
+	<div id="stars2"></div>
+	<div id="stars3"></div>
+	</div>
+	
+<!--legit errything-->
+<div class="lahat">
+
+<div class="cont">
+<a href="#">
+<svg height="70vh" width="70vh" class="pla">
+	<image id="ooog" xlink:href="../media/Sun_Self1.svg" width="68vh" height="68vh"></image>
+</svg>
+	</a>
+
+<div class="ti">
+	<span id="title">the<br>solar<br>system</span>
+	<a id="start" href="Map.html"> explore </a>
+	</div>
+</div>
+	
+<script>
+	var picInd;
+	var pics = ['Sun_Self1.svg', 'Mercury_Self (1).svg', 'Venus_Self (1).svg', 'Earth_Self (1).svg', 'Mars_Self (1).svg', 'Jupiter_Self1 (2).svg', 'Saturn_Self (2).svg', 'Uranus_Self1 (2).svg', 'Neptune_Self1 (2).svg'];
+	var frontSVG = document.getElementById("ooog");
+	
+	window.onload = function(){
+		picInd = 0;
+		
+		frontSVG.addEventListener('click', function(){
+			picInd = (picInd + 1) % pics.length;
+			
+			frontSVG.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `../media/${pics[picInd]}`);
+			
+			console.log(frontSVG);
+		});
+	}
+	</script>
+</body>
+</html>
